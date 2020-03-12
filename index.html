@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- main css -->
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- font awesome -->
+    <!--<link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />-->
+    <link rel="stylesheet" href="css/all.css" />
+    <title>Bootstrap / DOM manipulation project</title>
+  </head>
+
+  <body>
+    <header id="header">
+      <!--<div class="logo-container container-fluid">              top logo 
+        <div class="row align-items-center justify-content-center">
+          <div class="col-8 mx-auto col-md-4">
+            <img src="img/topLogo.png" class="img-fluid my-3 logo" alt="" />
+          </div>
+        </div>
+      </div> -->
+      <div id="header-container" class="sticky-top">
+        <nav class="navbar navbar-expand-md">
+          <a href="#" class="navbar-brand">
+            <img src="img/logo.svg" alt="" width="30" height="30" />
+          </a>
+          <button
+            type="button"
+            class="navbar-toggler"
+            data-toggle="collapse"
+            data-target="#navbar"
+          >
+            <span class="toggler-icon"
+              ><i class="fas fa-align-justify"></i
+            ></span>
+          </button>
+
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="navbar-nav text-capitalize mx-auto">
+              <li class="nav-item active mx-3">
+                <a href="#header" class="nav-link">home</a>
+              </li>
+              <li class="nav-item mx-3">
+                <a href="#store" class="nav-link">beer</a>
+              </li>
+              <li class="nav-item mx-3">
+                <a href="#whiskey" class="nav-link">whiskey</a>
+              </li>
+              <li class="nav-item mx-3">
+                <a href="#contacts" class="nav-link">contacts</a>
+              </li>
+            </ul>
+
+            <div class="nav-info-items d-none d-md-flex">
+              <!--phone num-->
+              <div
+                class="nav-info align-items-center d-flex justify-content-between mx-md-3"
+              >
+                <span class="info-icon mx-md-2">
+                  <i class="fas fa-phone"></i>
+                </span>
+                <p class="mb-0 phone-num">+7 999 999 3939</p>
+              </div>
+            </div>
+            <div class="nav-info-items d-flex">
+              <!--cart-->
+              <div
+                id="cart-info"
+                class="nav-info align-items-center cart-info d-flex justify-content-start mx-md-3"
+              >
+                <span class="cart-info__icon mr-md-2">
+                  <i class="fas fa-shopping-cart"></i>
+                </span>
+                <p class="mb-0 text-capitalize">
+                  <span id="item-count">0</span>
+                  bottles
+                </p>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!--banner-->
+    <div class="container-fluid">
+      <div class="row max-height justify-content-center align-items-center">
+        <div class="col-10 mx-auto banner text-center">
+          <h1 class="text-capitalize">
+            welcome to <strong class="banner-title">beer store</strong>
+          </h1>
+          <a href="#about" class="btn btn-main text-uppercase my-2"
+            >let's go!</a
+          >
+        </div>
+
+
+        <!--cart-->
+        <div class="cart" id="cart">
+          
+          <!--total-->
+          <div class="cart-total-container d-flex justify-content-around text-capitalize mt-5">
+            <h5>total</h5>
+            <h5>$ <strong id="cart-total" class="font-weight-bold">0.00</strong></h5>
+          </div>
+          <!-- end of total-->
+          <!--cart buttons-->
+          <div class="cart-buttons-container mt-3 d-flex justify-content-between">
+            <a href="#" id="clear-cart" class="btn btn-main text-uppercase">clear cart</a>
+            <a href="#" id="checkout" class="btn btn-main text-uppercase">checkout</a>
+          </div>
+      </div>
+      </div>
+    </div>
+
+    <!--ABOUT US-->
+    <!--ABOUT-->
+    <section class="about py-5" id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-8 mx-auto col-md-4 my-5">
+            <h1 class="text-capitalize">
+              about <strong class="banner-title">us</strong>
+            </h1>
+            <p class="my-4 text-muted about-description w-100">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque
+              cum placeat amet dolorem facere cupiditate optio magnam odit
+              magni, quibusdam labore cumque ut ex delectus quidem enim
+              veritatis. Mollitia et delectus aliquid, facilis a id atque iusto
+              vero unde cupiditate?
+            </p>
+            <a href="#store" class="btn btn-main text-uppercase">explore</a>
+          </div>
+          <div class="col-8 mx-auto col-md-4 my-5 align-self-center">
+            <div class="about-img__container">
+              <img src="img/about.jpeg" class="img-fluid" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--store section-->
+    <section id="store" class="store">
+      <div class="container">
+        <div class="row">
+          <div class="col-8 mx-auto col-4 text-center">
+            <h1 class="text-capitalize">
+              our <strong class="banner-title store-title">beer</strong>
+            </h1>
+          </div>
+        </div>
+
+        <!--search-->
+        <div class="row">
+          <div class="col-8 mx-auto col-md-4">
+            <form id="search">
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text search-box" id="search-icon">
+                    <i class="fas fa-search"></i>
+                  </span>
+                </div>
+                <input
+                  type="text"
+                  id="search-item"
+                  placeholder="Введите название продукта"
+                  class="form-control"
+                />
+              </div>
+            </form>
+          </div>
+        </div>
+        <!--filter buttons-->
+        <div class="row">
+          <div
+            class="col-8 mx-auto d-flex justify-content-around flex-wrap filterBtn"
+          >
+            <a
+              href="#store"
+              data-filter="all"
+              class="btn btn-main text-uppercase filter-btn m-2"
+              >all</a
+            >
+            <a
+              href="#store"
+              data-filter="belgium"
+              class="btn btn-main text-uppercase filter-btn m-2"
+              >belgium</a
+            >
+            <a
+              href="#store"
+              data-filter="czech"
+              class="btn btn-main text-uppercase filter-btn m-2"
+              >czech</a
+            >
+            <a
+              href="#store"
+              data-filter="england"
+              class="btn btn-main text-uppercase filter-btn m-2"
+              >england</a
+            >
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!--store items-->
+        <div class="row store-items" id="store-items">
+          <!-- single item -->
+          <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item beer" data-item="belgium">
+            <div id="pauwel kwak"  class="card single-item">
+              <div class="img-container">
+                <img src="img/beer1.jpg" class="card-img-top store-img" alt="sweets">
+              </div>
+              <div class="cart-body">
+                <div class="card-text d-flex justify-content-between mx-2 text-capitalize">
+                  <h4 class="store-item-name">pauwel kwak</h4>
+                  <div class="d-flex card-right justify-content-between">
+                    <h5 class="store-item-value mx-2">$ <strong class="store-item-price font-weight-bold">3.95</strong></h5>
+                    <span class="store-item-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--end of single item-->
+          <!-- single item -->
+          <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item beer" data-item="belgium">
+              <div  id="delirium red" class="card single-item">
+                <div class="img-container">
+                  <img src="img/beer2.jpg" class="card-img-top store-img" alt="sweets">
+                </div>
+                <div class="cart-body">
+                  <div class="card-text d-flex justify-content-between mx-2 text-capitalize">
+                    <h4 class="store-item-name">delirium red</h4>
+                    <div class="d-flex card-right justify-content-between">
+                      <h5 class="store-item-value mx-2">$ <strong class="store-item-price font-weight-bold">7.20</strong></h5>
+                      <span class="store-item-icon">
+                          <i class="fas fa-shopping-cart"></i>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--end of single item-->
+            <!-- single item -->
+          <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item beer" data-item="belgium">
+              <div id="trappist rochefort 10" class="card single-item">
+                <div class="img-container">
+                  <img src="img/beer3.jpg" class="card-img-top store-img" alt="sweets">
+                </div>
+                <div class="cart-body">
+                  <div class="card-text d-flex justify-content-between mx-2 text-capitalize">
+                    <h4 class="store-item-name">trappist rochefort 10</h4>
+                    <div class="d-flex card-right justify-content-between">
+                      <h5 class="store-item-value mx-2">$ <strong class="store-item-price font-weight-bold">2.50</strong></h5>
+                      <span class="store-item-icon">
+                          <i class="fas fa-shopping-cart"></i>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--end of single item-->
+            <!-- single item -->
+          <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item beer" data-item="belgium">
+              <div id="bourgogne de flanders" class="card single-item">
+                <div class="img-container">
+                  <img src="img/beer4.jpg" class="card-img-top store-img" alt="sweets">
+                </div>
+                <div class="cart-body">
+                  <div class="card-text d-flex justify-content-between mx-2 text-capitalize">
+                    <h4 class="store-item-name">bourgogne de flanders</h4>
+                    <div class="d-flex card-right justify-content-between">
+                      <h5 class="store-item-value mx-2">$ <strong class="store-item-price font-weight-bold">3.30</strong></h5>
+                      <span class="store-item-icon">
+                          <i class="fas fa-shopping-cart"></i>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--end of single item-->
+            <!-- single item -->
+          <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item beer" data-item="belgium">
+              <div id="westmalle dubel" class="card single-item">
+                <div class="img-container">
+                  <img src="img/beer5.jpg" class="card-img-top store-img" alt="sweets">
+                </div>
+                <div class="cart-body">
+                  <div class="card-text d-flex justify-content-between mx-2 text-capitalize">
+                    <h4 class="store-item-name">westmalle dubel</h4>
+                    <div class="d-flex card-right justify-content-between">
+                      <h5 class="store-item-value mx-2">$ <strong class="store-item-price font-weight-bold">1.80</strong></h5>
+                      <span class="store-item-icon">
+                          <i class="fas fa-shopping-cart"></i>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--end of single item-->
+            <!-- single item -->
+          <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item beer" data-item="belgium">
+              <div id="westmalle tripel" class="card single-item">
+                <div class="img-container">
+                  <img src="img/beer6.jpg" class="card-img-top store-img" alt="sweets">
+                </div>
+                <div class="cart-body">
+                  <div class="card-text d-flex justify-content-between mx-2 text-capitalize">
+                    <h4 class="store-item-name">westmalle tripel</h4>
+                    <div class="d-flex card-right justify-content-between">
+                      <h5 class="store-item-value mx-2">$ <strong class="store-item-price font-weight-bold">5</strong></h5>
+                      <span class="store-item-icon">
+                          <i class="fas fa-shopping-cart"></i>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--end of single item-->
+            <!-- single item -->
+          <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item beer" data-item="england">
+              <div id="fuller's london pride" class="card single-item">
+                <div class="img-container">
+                  <img src="img/beer7.jpg" class="card-img-top store-img" alt="sweets">
+                </div>
+                <div class="cart-body">
+                  <div class="card-text d-flex justify-content-between mx-2 text-capitalize">
+                    <h4 class="store-item-name">fuller's london pride</h4>
+                    <div class="d-flex card-right justify-content-between">
+                      <h5 class="store-item-value mx-2">$ <strong class="store-item-price font-weight-bold">4.20</strong></h5>
+                      <span class="store-item-icon">
+                          <i class="fas fa-shopping-cart"></i>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--end of single item-->
+            <!-- single item -->
+          <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item beer" data-item="england">
+              <div id="wychwood hobgoblin" class="card single-item">
+                <div class="img-container">
+                  <img src="img/beer8.jpg" class="card-img-top store-img" alt="sweets">
+                </div>
+                <div class="cart-body">
+                  <div class="card-text d-flex justify-content-between mx-2 text-capitalize">
+                    <h4 class="store-item-name">wychwood hobgoblin</h4>
+                    <div class="d-flex card-right justify-content-between">
+                      <h5 class="store-item-value mx-2">$ <strong class="store-item-price font-weight-bold">6.90</strong></h5>
+                      <span class="store-item-icon">
+                          <i class="fas fa-shopping-cart"></i>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--end of single item-->
+            <!-- single item -->
+          <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item beer" data-item="czech">
+              <div id="klaster svetle" class="card single-item">
+                <div class="img-container">
+                  <img src="img/beer9.jpg" class="card-img-top store-img" alt="sweets">
+                </div>
+                <div class="cart-body">
+                  <div class="card-text d-flex justify-content-between mx-2 text-capitalize">
+                    <h4 class="store-item-name">klaster svetle</h4>
+                    <div class="d-flex card-right justify-content-between">
+                      <h5 class="store-item-value mx-2">$ <strong class="store-item-price font-weight-bold">3.20</strong></h5>
+                      <span class="store-item-icon">
+                          <i class="fas fa-shopping-cart"></i>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--end of single item-->
+            <!-- single item -->
+          <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item beer" data-item="czech">
+              <div id="bernard svatecni" class="card single-item">
+                <div class="img-container">
+                  <img src="img/beer10.jpg" class="card-img-top store-img" alt="sweets">
+                </div>
+                <div class="cart-body">
+                  <div class="card-text d-flex justify-content-between mx-2 text-capitalize">
+                    <h4 class="store-item-name">bernard svatecni</h4>
+                    <div class="d-flex card-right justify-content-between">
+                      <h5 class="store-item-value mx-2">$ <strong class="store-item-price font-weight-bold">2.15</strong></h5>
+                      <span class="store-item-icon">
+                          <i class="fas fa-shopping-cart"></i>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--end of single item-->
+            <!-- single item -->
+          <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item beer" data-item="czech">
+              <div id="bakalar desitka" class="card single-item">
+                <div class="img-container">
+                  <img src="img/beer11.jpg" class="card-img-top store-img" alt="sweets">
+                </div>
+                <div class="cart-body">
+                  <div class="card-text d-flex justify-content-between mx-2 text-capitalize">
+                    <h4 class="store-item-name">bakalar desitka</h4>
+                    <div class="d-flex card-right justify-content-between">
+                      <h5 class="store-item-value mx-2">$ <strong class="store-item-price font-weight-bold">3.00</strong></h5>
+                      <span class="store-item-icon">
+                          <i class="fas fa-shopping-cart"></i>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--end of single item-->
+            <!-- single item -->
+          <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item beer" data-item="czech">
+              <div id="budweiser original" class="card single-item">
+                <div class="img-container">
+                  <img src="img/beer12.jpg" class="card-img-top store-img" alt="sweets">
+                </div>
+                <div class="cart-body">
+                  <div class="card-text d-flex justify-content-between mx-2 text-capitalize">
+                    <h4 class="store-item-name">budweiser original</h4>
+                    <div class="d-flex card-right justify-content-between">
+                      <h5 class="store-item-value mx-2">$ <strong class="store-item-price font-weight-bold">4.00</strong></h5>
+                      <span class="store-item-icon">
+                          <i class="fas fa-shopping-cart"></i>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--end of single item-->
+        </div> 
+  </section>
+
+
+
+
+  <!-- feature section -->
+  <section id="features" class="features py-5">
+    <div class="container">
+      <div class="row">
+        <!-- single feature -->
+        <div class="col-md-4 text-center my-3">
+          <img src="img/cask-icon.png" alt="cask">
+          <h6 class="text-uppercase my-3 feature-title">taps</h6>
+          <p class="w-75 mx-auto text-left feature-text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste natus mollitia modi est esse, ullam possimus harum. Eos minima odio nemo ratione animi libero suscipit laboriosam fuga doloribus quo provident numquam at, ipsa consequatur vitae quod, eaque hic atque amet porro incidunt?
+          </p>
+        </div>
+        <!--end of single feature-->
+        <!-- single feature -->
+        <div class="col-md-4 text-center my-3">
+          <img src="img/beer-icon.png" alt="cask">
+          <h6 class="text-uppercase my-3 feature-title">atmosphere</h6>
+          <p class="w-75 mx-auto text-left feature-text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste natus mollitia modi est esse, ullam possimus harum. Eos minima odio nemo ratione animi libero suscipit laboriosam fuga doloribus quo provident numquam at, ipsa consequatur vitae quod, eaque hic atque amet porro incidunt?
+          </p>
+        </div>
+        <!--end of single feature-->
+        <!-- single feature -->
+        <div class="col-md-4 text-center my-3">
+          <img src="img/moto-icon.png" alt="beer">
+          <h6 class="text-uppercase my-3 feature-title">parking</h6>
+          <p class="w-75 mx-auto text-left feature-text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste natus mollitia modi est esse, ullam possimus harum. Eos minima odio nemo ratione animi libero suscipit laboriosam fuga doloribus quo provident numquam at, ipsa consequatur vitae quod, eaque hic atque amet porro incidunt?
+          </p>
+        </div>
+        <!--end of single feature-->
+      </div>
+    </div>
+  </section>
+
+  <!-- whiskey section -->
+  <section id="whiskey" class="whiskey py-5">
+    <div class="container">
+      <!-- section title-->
+      <div class="row">
+        <div class="col-8 mx-auto text-center col-ms-6">
+          <h1 class="text-capitalize">get <strong class="banner-title">custom whiskey</strong></h1>
+        </div>
+      </div>
+      <!--end of title-->
+
+      <div class="row">
+        <!--single whiskey-->
+        <div class="col-10 mx-auto col-md-6 col-lg-4 my-4 text-capitalize text-center whiskey-details">
+          <h3 class="py-3">whatever whiskey</h3>
+          <div class="text-muted">
+            <p class="my-3">very old</p>
+            <p class="my-3">pretty good</p>
+            <p class="my-3">we recommend</p>
+            <p class="my-3">beatiful package</p>
+            <button class="btn btn-main whiskey-btn text-capitalize my-2">order now</button>
+            <p class="text-lowercase">500$</p>
+            <img src="img/whiskey1.jpg" alt="whiskey 1" class="img-fluid" />
+          </div>
+        </div>
+        <!--end of single whiskey-->
+        <!--single whiskey-->
+        <div class="col-10 mx-auto col-md-6 col-lg-4 my-4 text-capitalize text-center whiskey-details">
+            <h3 class="py-3">whatever whiskey</h3>
+            <div class="text-muted">
+              <p class="my-3">very old</p>
+              <p class="my-3">pretty good</p>
+              <p class="my-3">we recommend</p>
+              <p class="my-3">beatiful package</p>
+              <button class="btn btn-main whiskey-btn text-capitalize my-2">order now</button>
+              <p class="text-lowercase">700$</p>
+              <img src="img/whiskey2.jpg" alt="whiskey 3" class="img-fluid" />
+            </div>
+          </div>
+          <!--end of single whiskey-->
+          <!--single whiskey-->
+        <div class="col-10 mx-auto col-md-6 col-lg-4 my-4 text-capitalize text-center whiskey-details">
+          <h3 class="py-3">whatever whiskey</h3>
+          <div class="text-muted">
+            <p class="my-3">very old</p>
+            <p class="my-3">pretty good</p>
+            <p class="my-3">we recommend</p>
+            <p class="my-3">beatiful package</p>
+            <button class="btn btn-main whiskey-btn text-capitalize my-2">order now</button>
+            <p class="text-lowercase">950$</p>
+            <img src="img/whiskey3.jpg" alt="whiskey 2" class="img-fluid" />
+          </div>
+        </div>
+          <!--end of single whiskey-->
+      </div>
+      <!--Whiskey order notification-->
+      <div id="whiskey-order" class="whiskey-order d-flex flex-column justify-content-center">
+          <div class="my-3 mx-auto">Please, contact us via phone to get ur whiskey</div>
+          <p class="mx-auto">
+            <button type="button" class="btn btn-secondary close-order my-3">ok</button>
+          </p>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <footer id="footer">
+    <div class="container-fluid p-0 mt-5">
+      <div id="contacts" class="contacts d-flex flex-wrap mb-0 justify-content-around">
+        <div class="mx-5">
+        <p class="mx-6 my-4 text-capitalize">
+            <span class="">
+              <i class="fas fa-map"></i>
+            </span>
+            <span>tverskaya street 1, moscow, russia</span>
+          </p>
+          <p class="mx-6 my-4 text-lowercase">
+            <span class="">
+              <i class="fas fa-envelope"></i>
+            </span>
+            <span>fearntn@gmail.com / fearntn@yandex.ru</span>
+          </p>
+          <p class="mx-6 my-4">
+            <span class="">
+              <i class="fas fa-phone"></i>
+            </span>
+            <span>+7 999 999 99 99</span>
+          </p>
+        </div>
+          <p class="mx-5 my-auto media-contacts">
+            <span class="footer-icon my-3 mr-3">
+              <i class="fab fa-facebook"></i>
+            </span>
+            <span class="footer-icon mx-3">
+              <i class="fab fa-instagram"></i>
+            </span>
+            <span class="footer-icon mx-3">
+              <i class="fab fa-twitter"></i>
+            </span>
+          </p>
+      </div>
+    </div>
+  </footer>
+
+
+    <!-- jquery -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- script js -->
+    <script src="js/app.js"></script>
+  </body>
+</html>
