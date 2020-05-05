@@ -1,5 +1,5 @@
 # bootstrap-project
 
-Простой проект для тренировки работы с CSS фреймворком Bootstrap и DOM-манипуляциями на ванильном JS.
+Старый проект для тренировки работы с CSS фреймворком Bootstrap и DOM-манипуляциями на ванильном JS.
 
-Открыть - [https://beerproject.netlify.com/](https://beerproject.netlify.com/)
+Открыть - [https://thebooo.github.io/bootstrap-project/](https://thebooo.github.io/bootstrap-project/)
